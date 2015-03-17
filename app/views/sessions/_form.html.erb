@@ -1,0 +1,38 @@
+<%= form_for :session, url: session_path do |form| %>
+	<div id="flash_messages">
+		<% flash.each do |key, value| %>
+			<div class="row">
+				<div class="small-5 columns">
+					<%= content_tag(:div, value, :class => 'alert-box alert') %>
+				</div>
+			</div>
+		<% end %>
+	</div>
+	<div class="row">
+		<div class="small-5 columns small-centered">
+			<%= form.label :email %>
+			<%= form.text_field :email, type: 'email' %>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="small-5 columns small-centered">
+			<%= form.label :password %>
+			<%= form.password_field :password %>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="small-5 columns small-centered">
+			<%= form.submit class: 'button' %>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="small-5 columns">
+			<% if Clearance.configuration.allow_sign_up? and not User.any? %>
+				<%= link_to t('.sign_up'), sign_up_path %>
+			<% end %>
+		</div>
+	</div>
+<% end %>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Random Amusement</title>
+
+    <%= stylesheet_link_tag    'application' %>
+    <%= javascript_include_tag 'vendor/modernizr' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+		<nav class="top-bar" data-topbar role="navigation">
+			<ul class="title-area">
+				<li class="name">
+					<h1><a href="#/">Random Amusement</a></h1>
+				</li>
+			</ul>
+			<section class="top-bar-section">
+				<ul class="right">
+					<li><a href="#"><%= current_user.email if signed_in?%></a></li>
+					<li class="divider"></li>
+					<li class="has-form">
+						<% if signed_in? %>
+							<%= button_to 'Sign out', sign_out_path, method: :delete, class: 'button' if signed_in? %>
+						<% end %>
+					</li>
+				</ul>
+			</section>
+		</nav>
+		<div class="row">
+			<div class="small-12 columns text-center">
+				<h1>Random Amusement</h1>
+				<h3>Get your random amusement via SMS now!</h3>
+			</div>
+		</div>
+
+    <%= yield %>
+
+  </body>
+</html>
