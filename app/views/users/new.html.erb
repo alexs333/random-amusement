@@ -1,6 +1,6 @@
 <div id="clearance" class="sign-up">
 	<div class="row">
-		<div class="small-12 columns">
+		<div class="small-12 columns text-center">
 			<h2><%= t('.title') %></h2>
 		</div>
 	</div>
@@ -9,13 +9,13 @@
 		<%= render partial: '/users/form', object: form %>
 
 		<div class="row">
-			<div class="small-6 columns">
+			<div class="small-5 columns small-centered">
 				<%= form.submit class: 'button' %>
 			</div>
 		</div>
 
 		<div class="row">
-			<div class="small-12 columns">
+			<div class="small-5 columns small-centered">
 				<%= link_to t('.sign_in'), sign_in_path %>
 			</div>
 		</div>

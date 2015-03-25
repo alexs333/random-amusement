@@ -5,15 +5,15 @@
 </div>
 <% flash.each do |key, value| %>
 	<div class="row">
-		<div class="small-5 columns">
-			<%= content_tag(:div, value, :class => 'alert-box alert') %>
+		<div class="small-6 columns small-centered">
+			<%= content_tag(:div, value, :class => 'alert-box success') %>
 		</div>
 	</div>
 <% end %>
 <%= form_for @sms_message do |form| %>
 	<div class="row">
 		<div class="small-6 columns small-centered">
-			<%= form.text_field :number, placeholder: '+612312312312' %>
+			<%= form.text_field :number, placeholder: '+61231231231' %>
 		</div>
 	</div>
 	<div class="row">

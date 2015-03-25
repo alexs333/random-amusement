@@ -1,4 +1,8 @@
-default: &default
+base: &base
   adapter: postgresql
   encoding: unicode
   pool: 5
+
+development:
+  <<: *base
+  database: random_amusement_dev
