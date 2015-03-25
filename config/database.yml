@@ -6,3 +6,7 @@ base: &base
 development:
   <<: *base
   database: random_amusement_dev
+
+production:
+  <<: *base
+  database: random_amusement_prod
